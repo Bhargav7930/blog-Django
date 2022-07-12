@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %} Register{% endblock title %}
+
+{% block body %}
+
+<div class="container mt-2 mb-2">
+  <div class="card mb-5">
+    <div class="card-header ">
+      Quote
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>A well-known quote, contained in a blockquote element.</p>
+        <footer class="blockquote-footer">Bhargav Jani <cite title="Source Title">Blog-Buddy</cite></footer>
+      </blockquote>
+    </div>
+  </div>
+
+  <form method="POST">
+    {% csrf_token %}
+    {% if message %}
+    <div class="alert-alert-danger">
+      <h2 style="color:red;">{{message}}</h2>
+
+    {% endif %}
+      <div class="form-group"">
+        <label for="exampleInputEmail1" class="form-label"> Create Username</label>
+        <input type="text" class="form-control" id="username" name ="username">
+        <div id="emailHelp" class="form-text">We'll never share your Username with anyone else.</div>
+      </div>
+      <div class="mb-3">
+      <label for="Password" class="form-label"> Create Password</label>
+      <input type="password" class="form-control" id="password" name ="password">
+      </div>
+      <div class="mb-3">
+      <label for="Password" class="form-label">Enter Your Full Name</label>
+      <input type="text" class="form-control" id="name" name ="name">
+      </div>
+      <div class="mb-3">
+      <label for="Password" class="form-label"> Enter Your Email</label>
+      <input type="email" class="form-control" id="password" name ="email">
+      </div>
+      <div class="mb-3">
+      <label for="Password" class="form-label">Enter Your Mobile Number</label>
+      <input type="text" class="form-control" id="password" name ="mobile">
+      </div>
+      <div class="mb-3">
+      <label for="Password" class="form-label">Upload Your Profile Image</label>
+      <input type="file" class="form-control" id="password" name ="image">
+      </div>
+      <div class="mb-3">
+      <label for="Password" class="form-label">Enter Your City Name</label>
+      <input type="text" class="form-control" id="password" name ="location">
+      </div>
+      <div class="mb-3">
+      <label for="Password" class="form-label">Enter Your Designation</label>
+      <input type="text" class="form-control" id="password" name ="post">
+      </div>
+      <div class="mb-3">
+      <label for="Password" class="form-label">Enter Your Experiance In Year</label>
+      <input type="number" class="form-control" id="password" name ="experiance">
+      </div>
+    
+      <button type="submit" class="btn btn-success">Register</button>
+  </form>
+</div>
+
+{% endblock body %}

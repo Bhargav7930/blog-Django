@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Add-Blog{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <a href="{% url 'see_blog' %}" class="btn btn-dark mt-3"><strong>View Your Blogs</strong></a>
+    <form method="POST" class="mt-5 pt-5 mb-5 pb-5" enctype="multipart/form-data"> 
+        {% csrf_token %}
+        <div class="row"> 
+            <div class="col-md-12">
+            <label> Enter Blog Title </label>
+            <input type="text" class="form-control" placeholder="Enter Blog Title" name="title">    
+            </div>
+            <div class="col-md-12">
+            {{form.media}}
+            {{form.as_p}}    
+            </div>
+            <div class="col-md-12">
+            <input type="file" name="image" class="form-control">    
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Create Blog</button>
+    </form>
+</div>
+
+{% endblock body %}

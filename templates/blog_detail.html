@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} {{blog_obj.slug}} {% endblock title %}
+
+{% block body %}
+<div class="container text-center mt-5 mb-5">
+    <h1 class="title">{{blog_obj.title}}</h1>
+    <p class="text">Created At:<br><b>{{blog_obj.created_at}}</b></p>
+    <p class="text">Writer:<br><b>{{blog_obj.user.username}}</b></p>
+            <img src="/media/{{blog_obj.image}}" style="width:50%;height:auto;" class="card-img-top" alt="...">
+            <div class="body">
+                <p class="text">{{blog_obj.content|safe}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

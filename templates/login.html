@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Login{% endblock title %}
+
+{% block body %}
+<div class="container mt-5 mb-5 ">
+    <form method="POST">
+      {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Username</label>
+      <input type="text" class="form-control" id="username" name ="username">
+      <div id="emailHelp" class="form-text">We'll never share your Username with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name ="password">
+    </div>
+    
+    <button type="submit" class="btn btn-success">Submit</button>
+
+    <a href="{% url 'register' %}" class="btn btn-dark"><strong>Register</strong></a>
+  </div>
+</form>
+{% endblock body %}
